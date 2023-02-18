@@ -47,7 +47,7 @@ const AboutPage = () => {
                                 <p>
                                     I will not follow where the path may lead, but I
                                     will go where there is no path, and I will leave
-                                    a trail. here.
+                                    a trail.
                                 </p>
                                 <footer>
                                     Muriel Strode,{' '}
