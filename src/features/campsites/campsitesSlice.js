@@ -1,5 +1,6 @@
-import { CAMPSITES } from "../../app/shared/CAMPSITES";
 import { createSlice } from "@reduxjs/toolkit";
+import { CAMPSITES } from "../../app/shared/CAMPSITES";
+
 
 const initialState = {
     campsiteArray: CAMPSITES
@@ -10,17 +11,19 @@ const campsitesSlice = createSlice({
     initialState
 });
 
+
 export const selectAllCampsites = (state) => {
     return state.campsites.campsitesArray;
 }
 
-// export const selectRandomCampsite = () => {
-//     return CAMPSITES[Math.floor(CAMPSITES.length * Math.random()) ];
-// }
+export const selectRandomCampsite = () => {
+    return CAMPSITES[Math.floor(CAMPSITES.length * Math.random()) ];
+}
 export const selectCampsiteById = (id) => (state) => {
     return state.campsites.campsitesArray.find(
         (campsite) => campsite.id === parseInt(id)
     );
+    console.log(state)
 };
 
 export const selectFeaturedCampsite = (state) => {
@@ -28,5 +31,6 @@ export const selectFeaturedCampsite = (state) => {
     return state.campsites.campsitesArray.find((campsite) => campsite.featured);
 };
 
-export const campsiteReducer = campsitesSlice.reducer; 
+export const campsitesReducer = campsitesSlice.reducer; 
+
 
