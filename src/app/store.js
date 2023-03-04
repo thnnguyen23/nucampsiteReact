@@ -1,9 +1,18 @@
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from '../features/counterSlice';
+import logger from 'redux-logger';
 import { campsiteReducer } from '../features/campsites/campsitesSlice';
+import { commentsReducer } from '../features/comments/commentsSlice';
+import { partnersReducer } from '../features/partners/partnersSlice';
+import { promotionsReducer } from '../features/promotions/promotionsSlice';
+import { userReducer } from '../features/users/userSlice';
 
 export const store = configureStore({
-  reducer: {
-    campsites: campsiteReducer,
-  },
+    reducer: {
+        campsites: campsiteReducer,
+        comments: commentsReducer,
+        partners: partnersReducer,
+        promotions: promotionsReducer,
+        user: userReducer
+    },
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat([logger])
 });
